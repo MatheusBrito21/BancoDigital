@@ -38,6 +38,24 @@ public class Cliente {
 	}
 	
 	
+	public void consultarSaldo() {
+		System.out.println("Saldo atual -> R$"+getConta().getSaldoConta());
+	}
+	
+	public void depositar(double valor) {
+		getConta().setSaldoConta(this.conta.getSaldoConta() + valor);
+	}
+	
+	public double sacar(double valor) {
+		if(valor>getConta().getSaldoConta()) {
+			System.out.println("Saldo insuficiente!");
+			return 0.0;
+		} 
+		else {
+			getConta().setSaldoConta(this.conta.getSaldoConta() - valor);
+			return valor;
+		}
+	}
 	
 
 }
