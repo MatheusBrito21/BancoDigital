@@ -1,5 +1,6 @@
 package com.matt.bancodigital.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Conta conta;
 	
 	public Cliente() {}
