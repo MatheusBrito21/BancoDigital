@@ -5,16 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.matt.bancodigital.models.Cliente;
 import com.matt.bancodigital.repositories.ClienteRepository;
-import com.matt.bancodigital.repositories.ContaRepository;
 
 @Service
-public class CriarContaService {
+public class ClienteService {
 
 	@Autowired
 	ClienteRepository clienteRepository;
-	@Autowired
-	ContaRepository contaRepository;
 	
+
 	public Cliente criarConta(Cliente cliente) {
 		Cliente novoCliente = cliente;
 		

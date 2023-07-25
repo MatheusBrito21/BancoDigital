@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.matt.bancodigital.models.Cliente;
-import com.matt.bancodigital.services.CriarContaService;
+import com.matt.bancodigital.services.ClienteService;
 
 @RestController
 @RequestMapping(path = "/criarconta")
-public class CriarContaController {
+public class ClienteController {
 	
 	@Autowired
-	CriarContaService service;
+	ClienteService service;
 	
 	@PostMapping
 	public ResponseEntity<Cliente> criarConta(@RequestBody Cliente c){
