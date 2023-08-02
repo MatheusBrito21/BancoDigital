@@ -41,6 +41,26 @@ public class ClienteService {
 	public void deleteCliente(int id) {
 		clienteRepository.deleteById(id);
 	}
+	
+	public Cliente depositoCliente(int id, double valor) {
+		Cliente upCliente = getCliente(id);
+		upCliente.depositar(valor);
+		
+		System.out.println("Valor Depositado: R$"+valor);
+	
+		return clienteRepository.save(upCliente);
+	}
+	public Cliente consultarSaldo(int id) {
+		Cliente cli = getCliente(id);
+		return cli;
+	}
+	public Cliente sacar(int id, double valor) {
+		Cliente saqueCliente = getCliente(id);
+		saqueCliente.sacar(valor);
+		System.out.println("Valor Sacado: R$"+valor);
+		return clienteRepository.save(saqueCliente);
+		
+	}
 
 	
 }
